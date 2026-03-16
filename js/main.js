@@ -27,46 +27,64 @@
 ══════════════════════════════════════════════════════════════════════ */
 const SKILLS = [
   // ── Languages & Web ──────────────────────────────────────────────────
-  { name: 'Python',        sub: 'Data Science, AI/ML',       icon: 'python/python-original.svg',           glow: '37,118,171'  },
-  { name: 'C',             sub: 'System Programming',        icon: 'c/c-original.svg',                     glow: '0,89,156'    },
-  { name: 'HTML5',         sub: 'Semantic Markup',           icon: 'html5/html5-original.svg',             glow: '227,76,38'   },
-  { name: 'CSS3',          sub: 'Responsive Design',         icon: 'css3/css3-original.svg',               glow: '21,114,182'  },
-  { name: 'JavaScript',    sub: 'ES6+, DOM Manipulation',    icon: 'javascript/javascript-original.svg',   glow: '247,223,30'  },
-  { name: 'SQL',           sub: 'Queries & Relations',       icon: 'mysql/mysql-original.svg',             glow: '0,117,143'   },
+  { name: 'Python',        sub: 'Data Science, AI/ML',        icon: 'python/python-original.svg',           glow: '37,118,171'  },
+  { name: 'C',             sub: 'System Programming',         icon: 'c/c-original.svg',                     glow: '0,89,156'    },
+  { name: 'HTML5',         sub: 'Semantic Markup',            icon: 'html5/html5-original.svg',             glow: '227,76,38'   },
+  { name: 'CSS3',          sub: 'Responsive Design',          icon: 'css3/css3-original.svg',               glow: '21,114,182'  },
+  { name: 'JavaScript',    sub: 'ES6+, DOM Manipulation',     icon: 'javascript/javascript-original.svg',   glow: '247,223,30'  },
+  { name: 'SQL',           sub: 'Queries & Relations',        icon: 'mysql/mysql-original.svg',             glow: '0,117,143'   },
 
   // ── Databases ────────────────────────────────────────────────────────
-  { name: 'MySQL',         sub: 'Relational Database',       icon: 'mysql/mysql-original.svg',             glow: '0,117,143'   },
+  { name: 'MySQL',         sub: 'Relational Database',        icon: 'mysql/mysql-original.svg',             glow: '0,117,143'   },
 
-  // ── Frameworks & Libraries ───────────────────────────────────────────
-  { name: 'React',         sub: 'Frontend Framework',        icon: 'react/react-original.svg',             glow: '97,218,251'  },
-  { name: 'Next.js',       sub: 'React Framework',           icon: 'nextjs/nextjs-original.svg',           glow: '0,0,0'       },
-  { name: 'NumPy',         sub: 'Numerical Computing',       icon: 'numpy/numpy-original.svg',             glow: '77,171,207'  },
-  { name: 'Pandas',        sub: 'Data Analysis',             icon: 'pandas/pandas-original.svg',           glow: '130,0,128'   },
-  { name: 'Matplotlib',    sub: 'Data Visualization',        icon: 'matplotlib/matplotlib-original.svg',   glow: '17,119,187'  },
-  { name: 'TensorFlow',    sub: 'Deep Learning Framework',   icon: 'tensorflow/tensorflow-original.svg',   glow: '255,111,0'   },
-  { name: 'PyTorch',       sub: 'Neural Networks',           icon: 'pytorch/pytorch-original.svg',         glow: '238,76,44'   },
-  { name: 'Scikit-Learn',  sub: 'ML Algorithms',             icon: 'scikitlearn/scikitlearn-original.svg', glow: '247,137,26'  },
-  { name: 'OpenCV',        sub: 'Computer Vision',           icon: 'opencv/opencv-original.svg',           glow: '94,182,228'  },
+  // ── Web Frameworks ───────────────────────────────────────────────────
+  { name: 'React',         sub: 'Frontend Framework',         icon: 'react/react-original.svg',             glow: '97,218,251'  },
+  { name: 'Next.js',       sub: 'React Framework',            icon: 'nextjs/nextjs-original.svg',           glow: '0,0,0'       },
 
-  // ── AI / ML Domains ──────────────────────────────────────────────────
-  { name: 'Machine Learning', sub: 'Supervised & Unsupervised', icon: 'python/python-original.svg',        glow: '255,165,0'   },
-  { name: 'Deep Learning', sub: 'Neural Networks',            icon: 'tensorflow/tensorflow-original.svg',  glow: '255,111,0'   },
-  { name: 'NLP',           sub: 'Text & Language AI',         icon: 'python/python-original.svg',          glow: '99,102,241'  },
-  { name: 'Generative AI', sub: 'LLMs & Diffusion Models',   icon: 'python/python-original.svg',           glow: '139,92,246'  },
-  { name: 'MLOps',         sub: 'Model Deployment & CI/CD',  icon: 'docker/docker-original.svg',           glow: '0,175,230'   },
+  // ── Data & ML Libraries ──────────────────────────────────────────────
+  { name: 'NumPy',         sub: 'Numerical Computing',        icon: 'numpy/numpy-original.svg',             glow: '77,171,207'  },
+  { name: 'Pandas',        sub: 'Data Analysis',              icon: 'pandas/pandas-original.svg',           glow: '130,0,128'   },
+  { name: 'Matplotlib',    sub: 'Data Visualization',         icon: 'matplotlib/matplotlib-original.svg',   glow: '17,119,187'  },
+  { name: 'TensorFlow',    sub: 'Deep Learning Framework',    icon: 'tensorflow/tensorflow-original.svg',   glow: '255,111,0'   },
+  { name: 'PyTorch',       sub: 'Neural Networks',            icon: 'pytorch/pytorch-original.svg',         glow: '238,76,44'   },
+  { name: 'Scikit-Learn',  sub: 'ML Algorithms',              icon: 'scikitlearn/scikitlearn-original.svg', glow: '247,137,26'  },
+  { name: 'OpenCV',        sub: 'Computer Vision',            icon: 'opencv/opencv-original.svg',           glow: '94,182,228'  },
 
-  // ── Data & Analytics ─────────────────────────────────────────────────
-  { name: 'Data Science',  sub: 'End-to-End Pipelines',      icon: 'numpy/numpy-original.svg',             glow: '77,119,207'  },
-  { name: 'Data Analytics',sub: 'Insights & Reporting',      icon: 'pandas/pandas-original.svg',           glow: '0,168,107'   },
-  { name: 'Power BI',      sub: 'Business Intelligence',     icon: 'python/python-original.svg',           glow: '243,185,33'  },
-  { name: 'Excel',         sub: 'Spreadsheet & Analysis',    icon: 'python/python-original.svg',           glow: '33,115,70'   },
+  // ── AI / ML Domains — SimpleIcons CDN (correct brand icons) ──────────
+  { name: 'Machine Learning', sub: 'Supervised & Unsupervised',
+    url: 'https://cdn.simpleicons.org/scikitlearn/F7931E',    glow: '247,147,30'  },
+
+  { name: 'Deep Learning', sub: 'Neural Networks',
+    url: 'https://cdn.simpleicons.org/keras/D00000',          glow: '208,0,0'     },
+
+  { name: 'NLP',           sub: 'Text & Language AI',
+    url: 'https://cdn.simpleicons.org/huggingface/FFD21E',    glow: '255,210,30'  },
+
+  { name: 'Generative AI', sub: 'LLMs & Diffusion Models',
+    url: 'https://cdn.simpleicons.org/openai/000000',         glow: '99,102,241'  },
+
+  { name: 'MLOps',         sub: 'Model Deployment & CI/CD',
+    url: 'https://cdn.simpleicons.org/mlflow/0194E2',         glow: '1,148,226'   },
+
+  // ── Data & Analytics Tools ───────────────────────────────────────────
+  { name: 'Data Science',  sub: 'End-to-End Pipelines',
+    url: 'https://cdn.simpleicons.org/kaggle/20BEFF',         glow: '32,190,255'  },
+
+  { name: 'Data Analytics',sub: 'Insights & Reporting',
+    url: 'https://cdn.simpleicons.org/tableau/E97627',        glow: '233,118,39'  },
+
+  { name: 'Power BI',      sub: 'Business Intelligence',
+    url: 'https://cdn.simpleicons.org/powerbi/F2C811',        glow: '242,200,17'  },
+
+  { name: 'Excel',         sub: 'Spreadsheet & Analysis',
+    url: 'https://cdn.simpleicons.org/microsoftexcel/217346', glow: '33,115,70'   },
 
   // ── Tools & DevOps ───────────────────────────────────────────────────
-  { name: 'Git',           sub: 'Version Control',           icon: 'git/git-original.svg',                 glow: '240,80,50'   },
-  { name: 'GitHub',        sub: 'Code Hosting',              icon: 'github/github-original.svg',           glow: '36,41,47'    },
-  { name: 'VS Code',       sub: 'Code Editor',               icon: 'vscode/vscode-original.svg',           glow: '0,122,204'   },
-  { name: 'Jupyter',       sub: 'Interactive Notebooks',     icon: 'jupyter/jupyter-original.svg',         glow: '255,112,20'  },
-  { name: 'Docker',        sub: 'Containerization',          icon: 'docker/docker-original.svg',           glow: '0,175,230'   },
+  { name: 'Git',           sub: 'Version Control',            icon: 'git/git-original.svg',                 glow: '240,80,50'   },
+  { name: 'GitHub',        sub: 'Code Hosting',               icon: 'github/github-original.svg',           glow: '36,41,47'    },
+  { name: 'VS Code',       sub: 'Code Editor',                icon: 'vscode/vscode-original.svg',           glow: '0,122,204'   },
+  { name: 'Docker',        sub: 'Containerization',           icon: 'docker/docker-original.svg',           glow: '0,175,230'   },
+  { name: 'Jupyter',       sub: 'Interactive Notebooks',      icon: 'jupyter/jupyter-original.svg',         glow: '255,112,20'  },
 ];
 
 const DEVICONS_BASE = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/';
@@ -278,8 +296,9 @@ class PortfolioManager {
     const grid = document.getElementById('skills-grid');
     if (!grid) return;
 
-    /* DSA: Map for O(1) icon-src construction per skill */
-    const iconMap = new Map(SKILLS.map(s => [s.name, `${DEVICONS_BASE}${s.icon}`]));
+    /* DSA: Map for O(1) icon-src — skill.url (SimpleIcons CDN) takes priority
+       over DevIcons path, so brand-specific icons always render correctly.  */
+    const iconMap = new Map(SKILLS.map(s => [s.name, s.url || `${DEVICONS_BASE}${s.icon}`]));
 
     const fragment = document.createDocumentFragment();   // batch DOM insert — 1 reflow
 
