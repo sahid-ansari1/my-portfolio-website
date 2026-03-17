@@ -289,6 +289,26 @@ class PortfolioManager {
     this._setupCertCards();
 
     console.log('%c🚀 Portfolio Ready', 'color:#6366f1;font-weight:700;font-size:14px');
+
+     // ── Click to Reveal Email ──────────────────────────
+const u  = 'sahidansari.tech';
+const d  = 'gmail.com';
+const hiddenEl = document.querySelector('.reveal-email__hidden');
+const actualEl = document.querySelector('.reveal-email__actual');
+
+if (hiddenEl && actualEl) {
+  hiddenEl.addEventListener('click', () => {
+    actualEl.textContent = `${u}@${d}`;
+    actualEl.href = `mailto:${u}@${d}`;
+    actualEl.style.display = 'inline';
+
+    // Smooth swap
+    hiddenEl.style.transition = 'all .25s ease';
+    hiddenEl.style.opacity = '0';
+    hiddenEl.style.transform = 'scale(.9)';
+    setTimeout(() => hiddenEl.style.display = 'none', 250);
+  });
+}
   }
 
   /* ──────────────────────── TAB MAP (DSA: Map) ─────────────────────── */
