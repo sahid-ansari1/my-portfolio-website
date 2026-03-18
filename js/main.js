@@ -669,59 +669,15 @@ if (hiddenEl && actualEl) {
 
   /* ──────────────────────── CV DOWNLOAD ──────────────────────────── */
   _downloadCV() {
-    const cvText = `
-SAHID ANSARI
-B.Tech CSE (AI/ML) Student
-sahidansari2906@gmail.com | Kolkata, India
-LinkedIn: linkedin.com/in/sahidansari19 | GitHub: github.com/sahidansari
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-EDUCATION
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-• B.Tech Computer Science Engineering (AI & ML)
-  Brainware University, Kolkata  |  2024 – 2028
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-TECHNICAL SKILLS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Python • C Programming • HTML5 • CSS3 • JavaScript • Git
-Machine Learning • Natural Language Processing
-Data Analysis • Web Development
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-PROJECTS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-• AI Virtual Assistant  [In Progress]
-  Intelligent assistant powered by AI/ML for NLP and task automation.
-  Technologies: Python, NLP, Machine Learning
-
-• Smart Attendance System  [In Progress]
-  Face-recognition attendance system using OpenCV & Flask with SQLite.
-  Technologies: Python, Flask, OpenCV, SQLite
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-CERTIFICATES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-• AI Tools Workshop — Be10x (2025)
-  ChatGPT and AI Tools for enhanced productivity.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-INTERESTS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Artificial Intelligence • Machine Learning • Web Development
-Technology Innovation • Problem Solving
-    `.trim();
-
-    const blob = new Blob([cvText], { type: 'text/plain;charset=utf-8' });
-    const url  = URL.createObjectURL(blob);
-    const a    = Object.assign(document.createElement('a'), { href: url, download: 'Sahid_Ansari_CV.txt' });
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-
-    this.toast.push('CV downloaded! 📄', 'success');
-  }
+  const a = Object.assign(document.createElement('a'), {
+    href:     'assets/Sahid_Ansari_CV.pdf',
+    download: 'Sahid_Ansari_CV.pdf',
+  });
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  this.toast.push('CV downloading! 📄', 'success');
+}
 
   /* ──────────────────────── PUBLIC API ────────────────────────────── */
   showNotification(msg, type = 'info') { this.toast.push(msg, type); }
