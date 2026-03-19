@@ -689,16 +689,20 @@ if (hiddenEl && actualEl) {
    
    /* ──────────────────────── PAGE LOADER ──────────────────────── */
   _hideLoader() {
-    const loader = document.getElementById('page-loader');
-    if (!loader) return;
+  const loader = document.getElementById('page-loader');
+  if (!loader) return;
 
-    // 1.8s baad hide karo — bar animation complete hone ke baad
-    setTimeout(() => {
-      loader.classList.add('hidden');
+  // Maximum 2.5s — uske baad force hide
+  const hide = () => {
+    loader.classList.add('hidden');
+    setTimeout(() => { if (loader.parentNode) loader.remove(); }, 500);
+  };
 
-      // DOM se remove karo animation complete hone ke baad
-      setTimeout(() => loader.remove(), 500);
-    }, 1800);
+  setTimeout(hide, 1800);
+
+  // Safety net — agar kuch bhi galat ho toh bhi hide ho jaye
+  window.addEventListener('load', () => setTimeout(hide, 500));
+}
 
   /* ──────────────────────── DARK MODE ─────────────────────────── */
   _setupTheme() {
