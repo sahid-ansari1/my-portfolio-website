@@ -276,9 +276,7 @@ class PortfolioManager {
     this._setupForm();
     this._setupFooterYear();
     this._buildSectionOffsets();
-     // ── Dark Mode ──────────────────────────────────────
-    this._setupTheme();
-
+     
     /* Typewriter on hero name after 800ms */
     const tw = document.getElementById('typewriter-target');
     if (tw) setTimeout(() => typewriter(tw, 'Sahid Ansari', 80), 800);
@@ -289,7 +287,9 @@ class PortfolioManager {
 
     /* Certificates — delegate to cert-card clicks */
     this._setupCertCards();
-
+    // ── Dark Mode ──────────────────────────────────────
+    this._setupTheme();
+     
     console.log('%c🚀 Portfolio Ready', 'color:#6366f1;font-weight:700;font-size:14px');
 
      // ── Click to Reveal Email ──────────────────────────
