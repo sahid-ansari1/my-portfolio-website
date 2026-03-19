@@ -276,6 +276,8 @@ class PortfolioManager {
     this._setupForm();
     this._setupFooterYear();
     this._buildSectionOffsets();
+     // ── Dark Mode ──────────────────────────────────────
+    this._setupTheme();
 
     /* Typewriter on hero name after 800ms */
     const tw = document.getElementById('typewriter-target');
@@ -682,7 +684,35 @@ if (hiddenEl && actualEl) {
   /* ──────────────────────── PUBLIC API ────────────────────────────── */
   showNotification(msg, type = 'info') { this.toast.push(msg, type); }
 }
+/* ──────────────────────── DARK MODE ────────────────────────── */
+_setupTheme() {
+  const toggle = document.getElementById('theme-toggle');
+  const icon   = document.getElementById('theme-icon');
+  if (!toggle || !icon) return;
 
+  // Load saved preference — localStorage se
+  const saved = localStorage.getItem('theme') || 'light';
+  this._applyTheme(saved, icon);
+
+  toggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    const next    = current === 'dark' ? 'light' : 'dark';
+    this._applyTheme(next, icon);
+    localStorage.setItem('theme', next);   // Save preference
+  });
+
+  // System preference detect karo — agar user ne pehle choose nahi kiya
+  if (!localStorage.getItem('theme')) {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) this._applyTheme('dark', icon);
+  }
+}
+
+_applyTheme(theme, icon) {
+  document.documentElement.setAttribute('data-theme', theme);
+  // Icon swap — moon dark mein, sun light mein
+  icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+}
 /* ══════════════════════════════════════════════════════════════════════
    ANIMATION KEYFRAMES — injected once (not duplicated in CSS)
 ══════════════════════════════════════════════════════════════════════ */
